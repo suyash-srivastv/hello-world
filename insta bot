@@ -1,0 +1,41 @@
+import time
+from selenium.webdriver.common.action_chains import ActionChains
+
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get('http://www.instagram.com//')
+
+time.sleep(3)
+
+text2=driver.find_element_by_name('fullName')
+text2.click()
+text2.send_keys('adiruvBot1')
+text2.send_keys(Keys.SHIFT + Keys.TAB)
+
+#driver.send_keys('jhh')
+
+#actions = ActionChains(self.driver)
+#actions.send_keys('adiruv1@ad.com')
+#actions.perform()
+
+text1=driver.find_elements_by_xpath('//*[@name='emailOrPhone']')
+text1.click()
+text1.send_keys('adiruv1@ad.com')
+
+text3=driver.find_element_by_name('username')
+#text3.click()
+text3.send_keys('adiruvBot1')
+
+text4=driver.find_element_by_name('password')
+#text4.click()
+text4.send_keys('adiruvBot1')
+
+text4.submit()
+
+time.sleep(2)
+driver.close()
+
+
